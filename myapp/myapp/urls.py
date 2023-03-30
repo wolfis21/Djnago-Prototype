@@ -15,12 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpResponse
-
-def hola(request):
-    return HttpResponse("Hola mundo desde Django")
+from . import views
 
 urlpatterns = [
-    path('hola/',hola),
+    path('hola/', views.hola),
     path('admin/', admin.site.urls),
 ]
