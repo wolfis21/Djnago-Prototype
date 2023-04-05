@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content %}
+    <main class="blogs-main">
+        <section class="news">
+            <div class="news-content">
+                <h3>Noticias</h3>
+                <img src="{% static 'img/pc-img.jpg' %}" alt="img de blog">
+                <div class="news-info">
+                    <h2>Título del Blog</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Officiis repellat
+                        commodi dignissimos, saepe culpa
+                        pariatur atque fuga, facere dolore
+                        laboriosam harum fugit, labore numquam
+                        voluptas esse laborum debitis unde
+                        cupiditate.
+                    </p>
+                    <a class="blogs-btn" href="{% url 'post' 2 %}">Leer más</a>
+                </div>
+            </div>
+        </section>
+        <section class="posts">
+            <h3>Últimos Blogspost</h3>
+            {% for post in posts %}
+            <div class="posts-blog">
+                <img src="{{post.image.url}}" alt="">
+                <h4>{{post.title}}</h4>
+                <p>{{post.desc}}</p>
+                <a class="blogs-btn" href="blog.html">Leer más</a>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}
+
+{% block contact %}{% endblock %}
+{% block footer %}{% endblock %}

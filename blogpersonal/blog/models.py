@@ -1,5 +1,6 @@
 from django.db import models
 #ckeditor
+from ckeditor_uploader.fields import RichTextUploadingField
 from ckeditor.fields import RichTextField
 # Create your models here.
 

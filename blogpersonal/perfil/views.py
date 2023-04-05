@@ -6,4 +6,4 @@ def profile(request):
 
     projects = Project.objects.all()
 
-    return HttpResponse(projects)
+    return render(request,'profile.html')
