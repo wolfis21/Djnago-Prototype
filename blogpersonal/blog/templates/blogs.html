@@ -6,19 +6,11 @@
         <section class="news">
             <div class="news-content">
                 <h3>Noticias</h3>
-                <img src="{% static 'img/pc-img.jpg' %}" alt="img de blog">
+                <img src="{{ first_post.image.url }}" alt="img de blog">
                 <div class="news-info">
-                    <h2>Título del Blog</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Officiis repellat
-                        commodi dignissimos, saepe culpa
-                        pariatur atque fuga, facere dolore
-                        laboriosam harum fugit, labore numquam
-                        voluptas esse laborum debitis unde
-                        cupiditate.
-                    </p>
-                    <a class="blogs-btn" href="{% url 'post' 2 %}">Leer más</a>
+                    <h2>{{ first_post.title }}</h2>
+                    <p>{{ first_post.desc }}</p>
+                    <a class="blogs-btn" href="{% url 'post' first_post.id %}">Leer más</a>
                 </div>
             </div>
         </section>
@@ -29,7 +21,7 @@
                 <img src="{{post.image.url}}" alt="">
                 <h4>{{post.title}}</h4>
                 <p>{{post.desc}}</p>
-                <a class="blogs-btn" href="blog.html">Leer más</a>
+                <a class="blogs-btn" href="{% url 'post' post.id %}">Leer más</a>
             </div>
             {% endfor %}
         </section>
